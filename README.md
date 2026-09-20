@@ -1,43 +1,66 @@
-# Data Science Journey
+# Personal Expense Tracker
 
-Hi, I'm Simon — a Computer Science student from Sindh, Pakistan, learning Python, data analysis, and AI from the ground up. This repository documents my hands-on practice as I build real skills in data cleaning, analysis, and visualization.
+A console-based expense tracker built in pure Python — no external data libraries required (except Matplotlib for the optional chart export). Built to practice object-oriented programming, file persistence, and error handling from Cisco's Python Essentials 1 & 2.
 
-## 🎯 About This Journey
+## Features
 
-I'm working through a structured roadmap covering data science fundamentals through to machine learning and beyond. Every file in this repo is practice code I've written and tested myself — not just tutorials I've read.
+- Add expenses with input validation (rejects non-numeric amounts, re-prompts instead of crashing)
+- View all recorded expenses
+- Delete an expense by index
+- Filter expenses by category
+- Filter expenses by date range
+- Summary report: total spent, and totals broken down by category
+- Export a bar chart of spending by category (Matplotlib)
+- Persistent storage — expenses are saved to a JSON file and reloaded automatically on the next run
 
-## 🛠️ Skills Practiced So Far
+## How to Run
 
-| Skill | Status |
-|---|---|
-| Python Fundamentals | ✅ Complete |
-| NumPy (arrays, operations, indexing) | ✅ Complete |
-| Pandas (DataFrames, filtering, GroupBy, missing values) | ✅ Complete |
-| Matplotlib (line, bar, histogram, scatter, pie charts) | ✅ Complete |
-| Machine Learning (Scikit-learn) | 🔲 In progress |
-| Deep Learning (PyTorch) | 🔲 Upcoming |
-| NLP (Transformers, BERT) | 🔲 Upcoming |
-| Generative AI & Agents | 🔲 Upcoming |
+```bash
+python3 expense_tracker.py
+```
 
-## 📂 Repository Contents
+Requires Python 3.9+ and Matplotlib (`pip install matplotlib`) for the chart export feature.
 
-**Practice files:**
-- `numpy_practice.py` — NumPy array creation, operations, and indexing practice
-- `pandas_practice.py` — DataFrame basics, selection, filtering, GroupBy, and handling missing values
-- `matplotlib_practice.py` — Line, bar, histogram, scatter, and pie chart practice
+## Example
 
-**Projects:**
-- `sales_analysis.py` — A sales data analysis project combining Pandas and Matplotlib: cleaning a dataset with a missing value, analyzing revenue by region/month/product with GroupBy, and visualizing the results with three charts and a written summary.
-- `titanic_analysis.py` — Exploration of the real Kaggle Titanic dataset. Covers handling genuinely messy real-world data (including a column with 77% missing values), analyzing survival patterns by sex and passenger class, and visualizing the findings.
+```
+1. Add expense
+2. View all expenses
+3. Delete expense
+4. Filter by category
+5. Show summary
+6. Export spending chart
+7. Save and exit
+Choose an option: 5
+Total spent: 57.5
+By category: {'Food': 12.5, 'Transport': 45.0}
+```
 
-## 📈 What's Next
+## Project Structure
 
-I'm currently moving into Machine Learning with Scikit-learn, starting with Linear Regression, and will be adding more real analysis and prediction projects here as I build them.
+- `Expense` — represents a single expense (amount, category, date, description)
+- `ExpenseTracker` — manages the collection: add, delete, filter, summarize, save/load, export chart
+- `get_expense_input()` — handles user input and validation
+- `main()` — the interactive menu loop
 
-## 🤝 Freelance Work
+## What I Learned Building This
 
-I offer data cleaning and analysis services using Python and Pandas. Portfolio and freelance profile links will be added here soon.
+<!-- TODO — write this yourself, in your own words. Some things to consider:
+- What was the hardest bug you had to fix, and how did you figure it out?
+- What's the difference between a class and an instance, in your own words?
+- Why does JSON persistence need to convert objects to dictionaries and back?
+- What surprised you about how Python indentation affects behavior (e.g. return statements)?
+-->
 
----
+## What I'd Improve Next
 
-*This repository is updated regularly as I continue learning. Thanks for checking it out!*
+<!-- TODO — write this yourself. Ideas to consider (only if they're genuinely true for you):
+- Better date validation (currently accepts any string as a date)
+- Editing an existing expense instead of only delete + re-add
+- A proper CLI framework instead of raw input()
+- Unit tests
+-->
+
+## Author
+
+Simon — [GitHub](https://github.com/simonpet369-spec)
